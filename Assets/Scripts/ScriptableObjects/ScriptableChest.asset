@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83ab160f0f08ae49a9f8813c3a440f2, type: 3}
+  m_Name: ScriptableChest
+  m_EditorClassIdentifier: Assembly-CSharp::ChestScriptable
+  chestType: 1
+  chestImage: {fileID: 0}
+  timeToUnlock: 0
+  coinCostToBuy: 100
+  coinUpperLimit: 0
+  coinLowerLimit: 0
+  diamondUpperLimit: 0
+  diamondLowerLimit: 0
