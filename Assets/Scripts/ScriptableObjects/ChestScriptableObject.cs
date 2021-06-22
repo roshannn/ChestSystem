@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+public enum ChestType { None, Common, Rare, Legendary }
 [CreateAssetMenu(fileName = "ScriptableChest", menuName = "ScriptableObject/Chest/NewChestScriptableObject")]
 public class ChestScriptableObject : ScriptableObject
 {
+    
     public ChestType chestType;
+    public string chestTypeText;
 
-    public Image chestImage;
-
-    public int timeToUnlock;
-
-    public int coinCostToBuy;
+    public float timeToUnlock;
 
     public int coinUpperLimit;
     public int coinLowerLimit;
@@ -20,7 +18,6 @@ public class ChestScriptableObject : ScriptableObject
     public int diamondUpperLimit;
     public int diamondLowerLimit;
 
-    private Button interactButton;
     
     public int CoinReward()
     {

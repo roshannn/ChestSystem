@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ChestService : MonoBehaviour
+public class ChestService : MonoSingletonGeneric<ChestService>
 {
+    public Button addChest;
+    private Transform parent;
     public List<ChestScriptableObject> chestList;
-
+    public GameObject[] slotList;
+    public float popUpTime;
+    
     public ChestScriptableObject GetRandomChest()
     {
         int rand = Random.Range(0, chestList.Count);
@@ -14,17 +18,31 @@ public class ChestService : MonoBehaviour
         return chestList[rand];
     }
 
-    
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
+        addChest.onClick.AddListener(AddToSlot);
     }
 
-    // Update is called once per frame
-    void Update()
+    async private void AddToSlot()
     {
-        
+        for (int i = 0; i < slotList.Length; i++)
+        {
+            if (slotList[i].GetComponent<Chest>().isEmpty)
+            {
+                var x = slotList[i].GetComponent<Chest>();
+                x.isEmpty = false;
+                x.InitialiseChest();
+
+                return;
+            }
+            else if (i == slotList.Length - 1)
+            {
+                GameService.Instance.allSlotsFull.SetActive(true);
+                await new WaitForSeconds(popUpTime);
+                GameService.Instance.allSlotsFull.SetActive(false);
+                return;
+            }
+        }
+        return;
     }
 }

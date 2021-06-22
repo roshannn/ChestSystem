@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: ScriptableChest
   m_EditorClassIdentifier: Assembly-CSharp::ChestScriptable
   chestType: 1
-  chestImage: {fileID: 0}
-  timeToUnlock: 0
-  coinCostToBuy: 100
-  coinUpperLimit: 0
-  coinLowerLimit: 0
-  diamondUpperLimit: 0
-  diamondLowerLimit: 0
+  chestTypeText: Normal
+  timeToUnlock: 800
+  coinUpperLimit: 10
+  coinLowerLimit: 20
+  diamondUpperLimit: 5
+  diamondLowerLimit: 7
